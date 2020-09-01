@@ -1,1 +1,9 @@
-this is a test txt.
+Some tips to use git.
+my github address:
+https://github.com/God-zuole/note_vim.git
+git clone + address	克隆到本地仓库
+git pull	更新本地仓库到最新版本
+git add + filename	将file加到暂存区
+git commit -m ""
+git status	查看git状态
+git push	推到远程仓库
