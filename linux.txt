@@ -1,115 +1,115 @@
-1���ն�����
-�Զ���ȫ��tab
-������clear
-�����л������¼�ͷ ctrl + c�˳�ѡ��
+1、终端命令
+自动补全：tab
+清屏：clear
+命令切换：上下箭头 ctrl + c退出选择
 
-touch���½��ļ�
-����ļ������ڣ��½��ļ�
-����ļ����ڣ������޸�����
-�ļ���ǰ��.�������ļ�
+touch：新建文件
+如果文件不存在，新建文件
+如果文件存在，更新修改日期
+文件名前加.可隐藏文件
  
-mkdir������Ŀ¼
-ͬһĿ¼���ļ���Ŀ¼��������
-mkdir -p a/b/c:�������Ŀ¼
+mkdir：创建目录
+同一目录下文件和目录不能重名
+mkdir -p a/b/c:创建多个目录
 
-rm��ɾ���ļ�������ɾ��������������վ��
-rm -r��ɾ��Ŀ¼
-rm -f��ǿ��ɾ�����������ļ��Ĵ�������Ϣ
+rm：删除文件（彻底删除，不经过回收站）
+rm -r：删除目录
+rm -f：强制删除，不返回文件的存在性信息
 
-�鿴��ǰĿ¼��pwd
+查看当前目录：pwd
 
-�г���ǰĿ¼�µ��ļ���ls
-ls -a:��ʾ�����ļ�
-ls -l:��ʾ��ϸ��Ϣ
-ls -l -h:���Ի���ʽ��ʾ�ļ���С��h��Ҫ����l���棩
-ls -lha��������д�����߼���ѡ��֮����Ե���λ�ã�
-ͨ�����*(��������ַ�) ?(һ���ַ�)
-ls *d?d*_:ģ�������������ļ����к���*d?d*���ļ�
-ͨ�������[]��������ģ�������ķ�Χ
-ls [123]23:������23��βǰ���ַ���[123]�е��ļ�
+列出当前目录下的文件：ls
+ls -a:显示隐藏文件
+ls -l:显示详细信息
+ls -l -h:人性化方式显示文件大小（h需要接在l后面）
+ls -lha（可以连写，非逻辑性选项之间可以调换位置）
+通配符：*(任意个数字符) ?(一个字符)
+ls *d?d*_:模糊搜索：搜索文件名中含有*d?d*的文件
+通配符：用[]用于限制模糊搜索的范围
+ls [123]23:搜索以23结尾前面字符在[123]中的文件
 ls [abc]
-ls [a-f]:ƥ��a��f�е�����һ���ַ�
+ls [a-f]:匹配a到f中的任意一个字符
 
-cd:�л�Ŀ¼
-cd .:���ֵ�ǰĿ¼
-cd ..:������һ��Ŀ¼
-cd ~��������Ŀ¼ 
-cd��������Ŀ¼
-cd -��������һ��Ŀ¼������������Ŀ¼֮���л���
-����·����/����~��ͷ�ı�ʾ�Ӹ�Ŀ¼��ʼ�ľ���·��
-���·������ǰ��û��/����~����ʾ��Ե�ǰĿ¼���ڵ�Ŀ¼λ��
+cd:切换目录
+cd .:保持当前目录
+cd ..:返回上一级目录
+cd ~：返回主目录 
+cd：返回主目录
+cd -：返回上一级目录（仅限于两个目录之间切换）
+绝对路径：/或者~开头的表示从根目录开始的具体路径
+相对路径：最前面没有/或者~，表示相对当前目录所在的目录位置
 
-tree������״ͼ��ʾ��ǰĿ¼�µ�����Ŀ¼���ļ�
-tree -d��ֻ��ʾĿ¼
+tree：以树状图显示当前目录下的所有目录和文件
+tree -d：只显示目录
 
-���ƣ�cp Դ�ļ� Ŀ���ļ�
+复制：cp 源文件 目标文件
 cp ~/123.txt .
--i �����ļ�ǰ��ʾ��n���� y���ǣ�
-cp -r������Ŀ¼
+-i 覆盖文件前提示（n：否 y：是）
+cp -r：复制目录
  
-�ƶ���mv Դ�ļ���Ŀ¼ Ŀ���ļ���Ŀ¼
-ͬ·��mv��������
--i��������ʾ
+移动：mv 源文件或目录 目标文件或目录
+同路径mv：重命名
+-i：覆盖提示
 
-cat���鿴�����ļ�����
-more�������鿴�ļ�����
-�ո������ʾ��һҳ
-enter������һ��
-b���ع�һҳ
-f��ǰ��һҳ
-q���˳�
--b����ʾ�кţ�������У�
--n����ʾ�кţ�����У�
+cat：查看完整文件内容
+more：分屏查看文件内容
+空格键：显示下一页
+enter：滚动一行
+b：回滚一页
+f：前滚一页
+q：退出
+-b：显示行号（不编空行）
+-n：显示行号（编空行）
 
-grep���ı���������
-eg��grep -n as 123.txt 
--n����ʾ��Ӧ�к�
--v��ȡ������
--i�����Դ�Сд
-eg��grep -i "hello python" 123.txt
-����ģʽ���ң�
-^a:���ף�������a��ͷ����
-ke$:��β��������ke��β����
+grep：文本搜索工具
+eg：grep -n as 123.txt 
+-n：显示对应行号
+-v：取反搜索
+-i：忽略大小写
+eg：grep -i "hello python" 123.txt
+特殊模式查找：
+^a:行首，搜索以a开头的行
+ke$:行尾，搜索以ke结尾的行
 
-�ض���>��>>
-������ִ�н���ض���һ���ļ�
->:���
->>:׷�ӣ�׷�����ļ���β
-eg��echo hello > a
+重定向：>和>>
+将命令执行结果重定向到一个文件
+>:输出
+>>:追加，追加至文件结尾
+eg：echo hello > a
      ls -lh >> a
-echo:��������������ʾ
+echo:回声，参数再显示
 
-�ܵ���|
-��һ������������Ϊ��һ�����������
-eg��ls -alh ~ | more
+管道：|
+将一个命令的输出作为另一个命令的输入
+eg：ls -alh ~ | more
      ls -alh ~ | grep do
 
-�ػ�������shutdown ѡ�� ʱ��
--c������cancel
--r������
-ʱ��default��1 min
+关机重启：shutdown 选项 时间
+-c：撤销cancel
+-r：重启
+时间default：1 min
   
-ifconfig���鿴������������Ϣ
-ping IP��ַ����⵽Ŀ�������������Ƿ�����
-��ֹ��ctrl c
-ping 127.0.0.1���ػ���ַ������Ȿ��
+ifconfig：查看、配置网卡信息
+ping IP地址：检测到目标主机的连接是否正常
+终止：ctrl c
+ping 127.0.0.1（回环地址）：检测本机
 
 
 
-chown���޸�ӵ����
-chgrp���޸���
-chmod:�޸�Ȩ��
-eg��chmod -rw 123.txt
+chown：修改拥有者
+chgrp：修改组
+chmod:修改权限
+eg：chmod -rw 123.txt
      chmod +x 123.py
 
-/bin:�������ļ�Ŀ¼
-/sbin:ϵͳ�������ļ�Ŀ¼
-/usr/bin:���ڰ�װ������
-/usr/sbin:�����û��Ĺ�������
+/bin:二进制文件目录
+/sbin:系统二进制文件目录
+/usr/bin:后期安装的软件
+/usr/sbin:超级用户的管理程序
 
-�л��û���su - �û�����-�����л�����Ŀ¼��
+切换用户：su - 用户名（-用来切换到家目录）
 
-Ȩ�޼��㣺
+权限计算：
   r w x
   4 2 1
 7:1 1 1  
@@ -120,36 +120,19 @@ eg��chmod -rw 123.txt
 2:0 1 0
 1:0 0 1
 0:0 0 0
-eg��250��-w-|r-x|---(�û�|��|����)
+eg：250：-w-|r-x|---(用户|组|其他)
      chmod -R 755 demo
 
-date����ѯʱ��
-cal���鿴���� -y��һ������
-df -h����ʾ����ʣ��ռ�
-du -h [Ŀ¼��]����ʾĿ¼�µ��ļ���С
+date：查询时间
+cal：查看日历 -y：一年日历
+df -h：显示磁盘剩余空间
+du -h [目录名]：显示目录下的文件大小
 
-ps aux:��ʾ����
+ps aux:显示进程
 top:
-kill [-9] ���̴���:��������(-9ǿ����ֹ)
+kill [-9] 进程代号:结束进程(-9强行终止)
 
-find:�����ļ�
-eg��find Desktop/ -name "*1*"
+find:查找文件
+eg：find Desktop/ -name "*1*"
 
-ln��������
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ln：软链接
